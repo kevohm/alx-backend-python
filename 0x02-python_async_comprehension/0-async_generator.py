@@ -3,6 +3,7 @@
 import asyncio
 import random
 
+
 async def async_generator():
     for i in range(10):
         yield (random.random() * 10)
