@@ -94,7 +94,7 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         """Destroy class
         """
         cls.get_patcher.stop()
-    
+
     def test_public_repos(self):
         """
         Test public_repos method without license
