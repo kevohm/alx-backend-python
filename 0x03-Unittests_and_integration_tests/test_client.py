@@ -94,6 +94,20 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         """Destroy class
         """
         cls.get_patcher.stop()
+    
+    def test_public_repos(self):
+        """
+        Test public_repos method without license
+        """
+        self.assertEqual(self.client.public_repos(), self.expected_repos)
+
+    def test_public_repos_with_license(self):
+        """
+        Test public_repos method with license
+        """
+        self.assertEqual(
+            self.client.public_repos(license="apache-2.0"),
+            self.apache2_repos)
 
 
 if __name__ == "__main__":
